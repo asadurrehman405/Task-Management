@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
+import json
 from django.views.decorators.csrf import csrf_exempt
 from .models import Task
 from .forms import TaskForm
-import json
+
 
 
 def task_list(request):
