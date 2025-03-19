@@ -6,7 +6,9 @@ from .forms import TaskForm
 import json
 
 
-
+def task_list(request):
+    tasks=Task.objects.all().values('title','description','status','create_at')
+    return JsonResponse(list(tasks),self=False)
 @csrf_exempt
 def task_create(request):
     if request.method == 'POST':
