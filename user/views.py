@@ -43,4 +43,4 @@ def task_toggle_status(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     task.status = 'completed' if task.status == 'pending' else 'pending'
     task.save()
-    return JsonResponse({"message": "Task status updated successfully"}, safe=False)  # ✅ Return a dictionary
+    return JsonResponse({"message": "Task status updated successfully"}, safe=False)
